@@ -34,7 +34,7 @@ public class ActivityProduct extends AppCompatActivity {
         save = findViewById(R.id.activity_product_save);
         cancel = findViewById(R.id.activity_product_cancel);
 
-        fragment = getIntent().getExtras().getInt(Constant.EXTRA_FRAGMENT, -1);
+       //fragment = getIntent().getExtras().getInt(Constant.EXTRA_FRAGMENT, -1);
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override

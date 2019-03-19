@@ -1,6 +1,7 @@
 package com.iteso.sesion9;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -112,7 +113,25 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_LogOut) {
+
+            SharedPreferences sharedPreferences =
+                    getSharedPreferences(Constant.USER_PREFERENCES, MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
+            editor.apply();;
+
+            Intent intent = new Intent(MainActivity.this, ActivityLogin.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+
+            return true;
+        } else if ( id == R.id.action_PrivacyPolicy) {
+
+            Intent intent = new Intent(MainActivity.this, ActivityPrivacyPolicy.class);
+            startActivity(intent);
+
             return true;
         }
 

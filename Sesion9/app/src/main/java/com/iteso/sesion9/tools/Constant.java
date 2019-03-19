@@ -15,4 +15,7 @@ public class Constant {
     public static final int FRAGMENT_ELECTRONICS = 2;
 
     public static final int ACTIVITY_DETAIL = 9999;
+
+    public static final String USER_PREFERENCES = "com.iteso.USER_PREFERENCES";
+
 }
